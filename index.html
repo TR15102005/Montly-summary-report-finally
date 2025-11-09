@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Report Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Attendance System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Monthly Report</a>
+                    </li>
+                    <li class="nav-item admin-only">
+                        <a class="nav-link" href="#">User Management</a>
+                    </li>
+                    <li class="nav-item teacher-only">
+                        <a class="nav-link" href="#">My Class Attendance</a>
+                    </li>
+                </ul>
+                
+                <select class="form-select me-3" id="role-selector" style="width: 150px;">
+                    <option value="admin">Admin</option>
+                    <option value="teacher" selected>Teacher</option>
+                </select>
+
+                <button class="btn btn-outline-light" id="logout-btn">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid main-content">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4 text-white">Monthly Attendance Summary</h1>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow">
+            <div class="card-body">
+                <h5 class="card-title">Filter Report</h5>
+                <div class="row align-items-end">
+                    <div class="col-md-3 mb-3">
+                        <label for="month-select" class="form-label">Select Month:</label>
+                        <input type="month" id="month-select" class="form-control" value="2025-10">
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <button class="btn btn-primary w-100" id="generate-btn">View Report</button>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <button class="btn btn-success w-100" id="export-btn">Export CSV</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Attendance Data</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Total Hours</th>
+                                <th>Late Count</th>
+                                <th>Absent Days</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-body">
+                            <tr><td>1001</td><td>Alice Smith</td><td>160h 30m</td><td>2</td><td>0</td></tr>
+                            <tr><td>1002</td><td>Bob Johnson</td><td>158h 45m</td><td>5</td><td>1</td></tr>
+                            <tr><td>1003</td><td>Charlie Brown</td><td>165h 00m</td><td>0</td><td>0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* Import Google Font for a professional look */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Professional dark blue/grey background gradient */
+    background: linear-gradient(135deg, #0f4c75, #1b2a49);
+    background-attachment: fixed; /* Ensures gradient fills the whole screen */
+    min-height: 100vh;
+    padding-top: 70px; /* Space for fixed navbar */
+}
+
+/* Customizing the Navigation Bar */
+#main-navbar {
+    background-color: #0f4c75; /* Deep blue header */
+    border-bottom: 3px solid #3399ff; /* Accent border */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Main content container styling */
+.main-content {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+/* Styling for Cards (Filters and Table) */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft, professional shadow */
+}
+
+/* Table Header Styling */
+#attendance-table thead th {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Table Hover Effect */
+#attendance-table tbody tr:hover {
+    background-color: #e9f5ff;
+    cursor: default;
+}
+
+/* Hiding role-specific elements by default */
+.admin-only, .teacher-only {
+    display: none;
+}
+
+/* Adjustments for the logout button */
+#logout-btn {
+    border-color: #fff;
+}
+#logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
